@@ -8,10 +8,12 @@
   width: 100vw;
   justify-content: center;
   align-items: center;
+  overflow: auto;
 }
 .detailsContainer {
   display: flex;
   align-items: center;
+  
 }
 
 .detailC{
@@ -57,6 +59,7 @@ align-content: center;
   flex-direction: column;
   justify-content: flex-start;
   text-align: left;
+
 }
 
 .detailName {
@@ -66,7 +69,7 @@ align-content: center;
 }
 
 .detailName:hover {
-  transform: scale(1.05);
+color: white;
   transition: 0.4s;
 }
 .detailsP {

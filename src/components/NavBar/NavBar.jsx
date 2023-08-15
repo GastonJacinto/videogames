@@ -102,14 +102,14 @@ const NavBar = () => {
           name="filters"
           id=""
         > 
-          <option selected value="all">ORDER BY...</option>
+          <option selected="true" disabled="disabled">ORDER BY...</option>
           <option value="asc">A-Z</option>
           <option value="desc">Z-A</option>
           <option value="+">RATING ⬆</option>
           <option value="-">RATING ⬇</option>
         </select>
         <select className={style.navSelects} onChange={filtering} name="source">
-          <option selected value="all">FILTER BY SOURCE</option>
+          <option selected="true" disabled="disabled">FILTER BY SOURCE</option>
           <option value="db">DATABASE</option>
           <option value="api">API</option>
         </select>
@@ -119,7 +119,7 @@ const NavBar = () => {
           name="genres"
           id=""
         >
-          <option selected value="all">FILTER BY GENRES</option>
+          <option selected="true" disabled="disabled">FILTER BY GENRES</option>
           {genres?.map((gen, index) => {
             return (
               <option key={index} value={gen.name}>
@@ -134,7 +134,7 @@ const NavBar = () => {
           name="platforms"
           id=""
         >
-          <option selected>FILTER BY PLATFORMS</option>
+          <option selected="true" disabled="disabled">FILTER BY PLATFORMS</option>
           {!allPlatforms?.length?
          <option value="">Charging platforms...</option>:null
         }

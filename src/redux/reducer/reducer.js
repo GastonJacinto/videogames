@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import { useDispatch } from "react-redux";
 import {
   GET_ALL_GAMES,
   ORDER,
@@ -161,6 +162,7 @@ function rootReducer(state = initialState, action) {
       }
       break;
     case FILTERED_BY_GENRES:
+
       let genreFilter = [];
 
       [...state.backUp].forEach((game) => {
