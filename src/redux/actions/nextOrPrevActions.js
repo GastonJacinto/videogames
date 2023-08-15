@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { PAGINATE } from './actionTypes';
 
 export function nextOrPrev(direction){
