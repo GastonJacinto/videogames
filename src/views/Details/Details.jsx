@@ -4,7 +4,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getGameDetail } from "../../redux/actions/getGameDetailActions";
 import { cleanDetail } from "../../redux/actions/cleanDetailStateActions";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import style from "./Details.module.css";
 import { Link } from "react-router-dom";
 import { deleteGame } from "../../redux/actions/deleteGameActions";
@@ -26,7 +26,7 @@ const Details = () => {
       dispatch(cleanDetail());
     };
   }, []);
-  
+  const navigate = useNavigate()
   let genres = [];
 
   if (gameDetail.onDB) {
@@ -55,6 +55,7 @@ const Details = () => {
     }
   });
 const isLoading = useSelector((state)=>state.isLoading)
+
   function deleteDBGame() {
     const confirm = window.confirm(
       "Are you sure you want to delete this game?"
@@ -62,7 +63,8 @@ const isLoading = useSelector((state)=>state.isLoading)
     if (confirm) {
       window.alert("Your game was succesfully deleted.");
       dispatch(deleteGame(gameDetail.id))
-      } else window.alert("Action cancelled.");
+      navigate("/home")
+      } else window.alert("Action cancelled.")
 
   }
   return (
@@ -92,11 +94,9 @@ const isLoading = useSelector((state)=>state.isLoading)
             <p className={style.detailsP}>Rating: {gameDetail.rating}</p>
             <div className={style.deleteContainer}>
               {gameDetail.onDB ? (
-                <Link to="/home">
                   <button onClick={deleteDBGame} className={style.deleteButton}>
                     🗑
                   </button>
-                </Link>
               ) : null}
             </div>
           </div>

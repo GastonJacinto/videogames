@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-import { useDispatch } from "react-redux";
 import {
   GET_ALL_GAMES,
   ORDER,

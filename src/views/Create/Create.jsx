@@ -215,7 +215,7 @@ if(gameCreated){
 
   //!ACA HAGO EL GETITEM Y USO LAS PLATAFORMAS
   let allPlatforms;
-  if (localStorage.length) {
+  if (localStorage.plats) {
     allPlatforms = localStorage.getItem("plats").split(",");
   }
 
