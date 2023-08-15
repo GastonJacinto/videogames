@@ -166,7 +166,7 @@ const NavBar = () => {
             FILTER BY PLATFORMS
           </option>
           {!allPlatforms?.length ? (
-            <option value="">Charging platforms...</option>
+            <option disabled="disabled">Charging platforms, please wait.</option>
           ) : null}
           {allPlatforms?.map((gen, index) => {
             return (
