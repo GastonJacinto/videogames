@@ -15,6 +15,7 @@ function Home() {
  const genres = useSelector((state) => state.genres);
 const isLoading = useSelector((state)=> state.isLoading)
 const deleted = useSelector((state)=> state.deleted)
+
   React.useEffect(() => {
     if (!allGames.length ) {
       dispatch(getAllGames());

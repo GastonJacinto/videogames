@@ -3,20 +3,14 @@ import style from "./Landing.module.css";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getPlatforms } from "../../redux/actions/getPlatformsActions";
-let requesting = false;
+
 const Landing = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
 
-    if (!requesting && !localStorage.plats) {
-      requesting=true
+    if (!localStorage.length) {
       dispatch(getPlatforms());
-    }
-    return ()=>{
-      if(requesting){
-        
-      }
     }
   });
 
