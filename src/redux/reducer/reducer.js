@@ -51,8 +51,6 @@ function rootReducer(state = initialState, action) {
       };
     case GET_PLATFORMS:
       localStorage.setItem("plats", action.payload);
-      window.alert("Platforms have been charged. The page will refresh.")
-      window.location.reload();
       return { ...state };
     case GET_BY_NAME:
       return {
