@@ -9,10 +9,12 @@ import { getGenres } from "../../redux/actions/getGenresActions";
 import Paginate from "../../components/Paginate/Paginate";
 import { setIsLoading } from "../../redux/actions/isLoadingAction";
 import Loader from "../../components/Loader/Loader";
+import { getPlatforms } from "../../redux/actions/getPlatformsActions";
 function Home() {
   const dispatch = useDispatch();
   const allGames = useSelector((state) => state.allGames);
  const genres = useSelector((state) => state.genres);
+ const platforms = useSelector((state) => state.platforms);
 const isLoading = useSelector((state)=> state.isLoading)
 const deleted = useSelector((state)=> state.deleted)
   React.useEffect(() => {
@@ -23,7 +25,10 @@ const deleted = useSelector((state)=> state.deleted)
     if (!genres.length) {
       dispatch(getGenres());
     }
-
+    if (!platforms.length) {
+      console.log("asd")
+      dispatch(getPlatforms());
+    }
     return () => {};
   }, []);
  return (

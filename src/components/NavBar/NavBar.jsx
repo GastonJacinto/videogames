@@ -52,10 +52,9 @@ const NavBar = () => {
   function filterGenre(event) {
     dispatch(filteredByGenre(event.target.value));
   }
-  let allPlatforms;
-  if (localStorage.plats) {
-    allPlatforms = localStorage.getItem("plats").split(",");
-  }
+  // if (localStorage.plats) {
+  //   allPlatforms = localStorage.getItem("plats").split(",");
+  // }
   function filterPlatform(event) {
 
     dispatch(filteredByPlatform(event.target.value));
@@ -63,7 +62,11 @@ const NavBar = () => {
   function orderBy(event) {
     dispatch(orderByNameOrRat(event.target.value));
   }
+
   const genres = useSelector((state) => state.genres);
+  const platforms = useSelector((state)=>state.platforms)
+
+  console.log(platforms)
   return (
     <div className={style.navBarContainer}>
       <div className={style.imgNavBarContainer}>
@@ -155,12 +158,12 @@ const NavBar = () => {
           <option selected="true" disabled="disabled">
             FILTER BY PLATFORMS
           </option>
-          {!allPlatforms?.length ? (
+          {!platforms?.length ? (
             <option disabled="disabled">
               Charging platforms, please wait.
             </option>
           ) : null}
-          {allPlatforms?.map((gen, index) => {
+          {platforms?.map((gen, index) => {
             return (
               <option key={index} value={gen}>
                 {gen}

@@ -50,8 +50,10 @@ function rootReducer(state = initialState, action) {
         genres: action.payload,
       };
     case GET_PLATFORMS:
-      localStorage.setItem("plats", action.payload);
-      return { ...state };
+      // localStorage.setItem("plats", action.payload);
+      return { ...state,
+      platforms: action.payload
+      };
     case GET_BY_NAME:
       return {
         ...state,

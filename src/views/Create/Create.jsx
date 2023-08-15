@@ -214,10 +214,11 @@ if(gameCreated){
   }
 
   //!ACA HAGO EL GETITEM Y USO LAS PLATAFORMAS
-  let allPlatforms;
-  if (localStorage.plats) {
-    allPlatforms = localStorage.getItem("plats").split(",");
-  }
+  // let allPlatforms;
+  // if (localStorage.plats) {
+  //   allPlatforms = localStorage.getItem("plats").split(",");
+  // }
+  const platforms = useSelector((state)=>state.platforms)
 
   return (
     <div className={style.createContainer}>
@@ -267,10 +268,10 @@ if(gameCreated){
           <br />
           <label className={style.createFormLabels}>Platforms:</label>
           <select onChange={handleChange} name="platforms" id="platforms">
-          {!allPlatforms?.length ? (
+          {!platforms?.length ? (
             <option selected="selected" disabled="disabled">Charging platforms, please wait.</option>
           ) : null}
-            {allPlatforms?.map((plat) => {
+            {platforms?.map((plat) => {
               return <option value={plat}>{plat}</option>;
             })}
           </select>
