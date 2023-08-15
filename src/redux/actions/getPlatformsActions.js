@@ -5,7 +5,7 @@ export function getPlatforms() {
   return async function (dispatch) {
     try {
      
-      const {data} = await axios("/platforms/");
+      const {data} = await axios("/platforms");
 dispatch({
   type: GET_PLATFORMS,
   payload: data

@@ -293,7 +293,6 @@ if(gameCreated){
                 </div>
                 <button
                   className={style.xGenreButton}
-                  for="platforms"
                   type="button"
                   onClick={eraseAllPlats}
                 >
@@ -381,7 +380,7 @@ if(gameCreated){
              onChange={handleChange}
           >
             {genres.map((genre) => {
-              return <option value={genre.name}>{genre.name}</option>;
+              return <option key={genre.id}value={genre.name}>{genre.name}</option>;
             })}
           </select>
           {addGenres.length ? (
