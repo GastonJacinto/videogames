@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import style from './App.module.css';
-import { Route, Switch, useLocation,Router,Routes} from "react-router-dom";
+import { Route,useLocation,Routes} from "react-router-dom";
 import Home from './views/Home/Home';
 import Details from './views/Details/Details';
 import Create from './views/Create/Create';
