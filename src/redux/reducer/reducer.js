@@ -179,6 +179,7 @@ function rootReducer(state = initialState, action) {
         currentPage: 0,
       };
     case FILTERED_BY_PLATFORMS:
+   
       let platformFilter = [...state.backUp].filter((game) =>
         game.platforms.includes(action.payload)
       );
