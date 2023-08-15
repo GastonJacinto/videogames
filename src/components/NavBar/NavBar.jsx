@@ -1,22 +1,36 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import style from "./NavBar.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getByName } from "../../redux/actions/getByNameActions";
-import {
-  orderByNameOrRat,
-} from "../../redux/actions/orderByNameActions";
+import { orderByNameOrRat } from "../../redux/actions/orderByNameActions";
 import { cleanFiltered } from "../../redux/actions/cleanFilteredActions";
 import { filteredBySource } from "../../redux/actions/filteredBySourceActions";
 import { filteredByGenre } from "../../redux/actions/filteredByGenresActions";
 import { filteredByPlatform } from "../../redux/actions/filteredByPlatformsActions";
-import {  setIsLoading } from "../../redux/actions/isLoadingAction";
+import { setIsLoading } from "../../redux/actions/isLoadingAction";
+import lofi from "../../audio/lofibackground.mp3";
+
 const NavBar = () => {
   const dispatch = useDispatch();
 
   const [name, setName] = React.useState("");
 
+  const audioRef = useRef(null)
+  const [muted, setMuted] = React.useState(false);
+
+  const handleMute = () => {
+    if (audioRef.current) {
+      audioRef.current.muted = !audioRef.current.muted;
+      setMuted(audioRef.current.muted);
+    }
+  };
+  useEffect(()=>{
+    if (audioRef.current) {
+      audioRef.current.volume = 0.05; 
+    }
+  })
   function handleChange(event) {
     setName(event.target.value);
   }
@@ -24,10 +38,10 @@ const NavBar = () => {
   function clean() {
     dispatch(cleanFiltered());
   }
-  
+
   function searchByName(name) {
-    dispatch(setIsLoading())
-    dispatch(getByName(name))
+    dispatch(setIsLoading());
+    dispatch(getByName(name));
   }
 
   function filtering(event) {
@@ -61,7 +75,6 @@ const NavBar = () => {
   const genres = useSelector((state) => state.genres);
   return (
     <div className={style.navBarContainer}>
-      
       <div className={style.imgNavBarContainer}>
         <Link to={"/"}>
           <img
@@ -69,6 +82,15 @@ const NavBar = () => {
             alt="logo"
           />
         </Link>
+      </div>
+      <div>
+        <audio
+          ref={audioRef}
+          className={style.audioControls}
+          src={lofi}
+          autoPlay
+          loop
+        />
 
       </div>
       <div className={style.linkNavBarContainer}>
@@ -101,15 +123,19 @@ const NavBar = () => {
           onChange={orderBy}
           name="filters"
           id=""
-        > 
-          <option selected="true" disabled="disabled">ORDER BY...</option>
+        >
+          <option selected="true" disabled="disabled">
+            ORDER BY...
+          </option>
           <option value="asc">A-Z</option>
           <option value="desc">Z-A</option>
           <option value="+">RATING ⬆</option>
           <option value="-">RATING ⬇</option>
         </select>
         <select className={style.navSelects} onChange={filtering} name="source">
-          <option selected="true" disabled="disabled">FILTER BY SOURCE</option>
+          <option selected="true" disabled="disabled">
+            FILTER BY SOURCE
+          </option>
           <option value="db">DATABASE</option>
           <option value="api">API</option>
         </select>
@@ -119,7 +145,9 @@ const NavBar = () => {
           name="genres"
           id=""
         >
-          <option selected="true" disabled="disabled">FILTER BY GENRES</option>
+          <option selected="true" disabled="disabled">
+            FILTER BY GENRES
+          </option>
           {genres?.map((gen, index) => {
             return (
               <option key={index} value={gen.name}>
@@ -134,10 +162,12 @@ const NavBar = () => {
           name="platforms"
           id=""
         >
-          <option selected="true" disabled="disabled">FILTER BY PLATFORMS</option>
-          {!allPlatforms?.length?
-         <option value="">Charging platforms...</option>:null
-        }
+          <option selected="true" disabled="disabled">
+            FILTER BY PLATFORMS
+          </option>
+          {!allPlatforms?.length ? (
+            <option value="">Charging platforms...</option>
+          ) : null}
           {allPlatforms?.map((gen, index) => {
             return (
               <option key={index} value={gen}>
@@ -165,7 +195,12 @@ const NavBar = () => {
         >
           🔎
         </button>
+        
       </div>
+      <button className={style.muteButton}
+         onClick={handleMute}>
+        {muted ? '🔈' : '🔊'}
+      </button>
     </div>
   );
 };
