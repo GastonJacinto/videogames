@@ -269,18 +269,18 @@ if(gameCreated){
           <label className={style.createFormLabels}>Platforms:</label>
           <select onChange={handleChange} name="platforms" id="platforms">
           {!platforms?.length ? (
-            <option selected="selected" disabled="disabled">Charging platforms, please wait.</option>
+            <option selected={true} disabled="disabled">Charging platforms, please wait.</option>
           ) : null}
-            {platforms?.map((plat) => {
-              return <option value={plat}>{plat}</option>;
+            {platforms?.map((plat,i) => {
+              return <option key={i}value={plat}>{plat}</option>;
             })}
           </select>
           {addPlatforms.length ? (
               <div className={style.platfsbutcontainer}>
                 <div className={style.genreAndButContainer}>
-                  {addPlatforms?.map((plat) => {
+                  {addPlatforms?.map((plat,i) => {
                     return (
-                      <div className={style.genRenders}>
+                      <div key={i} className={style.genRenders}>
                       <p className={style.genresRender} value={plat}>
                         {plat}
                       </p>
@@ -390,9 +390,9 @@ if(gameCreated){
           {addGenres.length ? (
             <div className={style.platfsbutcontainer}>
               <div className={style.genreAndButContainer}>
-                {addGenres?.map((gen) => {
+                {addGenres?.map((gen,i) => {
                   return (
-                    <div className={style.genRenders}>
+                    <div key={i} className={style.genRenders}>
                       <p className={style.genresRender} value={gen}>
                         {gen}
                       </p>

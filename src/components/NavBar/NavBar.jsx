@@ -65,8 +65,6 @@ const NavBar = () => {
 
   const genres = useSelector((state) => state.genres);
   const platforms = useSelector((state)=>state.platforms)
-
-  console.log(platforms)
   return (
     <div className={style.navBarContainer}>
       <div className={style.imgNavBarContainer}>
@@ -117,7 +115,7 @@ const NavBar = () => {
           name="filters"
           id=""
         >
-          <option selected="true" disabled="disabled">
+          <option selected={true} disabled="disabled">
             ORDER BY...
           </option>
           <option value="asc">A-Z</option>
@@ -126,7 +124,7 @@ const NavBar = () => {
           <option value="-">RATING ⬇</option>
         </select>
         <select className={style.navSelects} onChange={filtering} name="source">
-          <option selected="true" disabled="disabled">
+          <option selected={true} disabled="disabled">
             FILTER BY SOURCE
           </option>
           <option value="db">DATABASE</option>
@@ -138,7 +136,7 @@ const NavBar = () => {
           name="genres"
           id=""
         >
-          <option selected="true" disabled="disabled">
+          <option selected={true} disabled="disabled">
             FILTER BY GENRES
           </option>
           {genres?.map((gen, index) => {
@@ -155,7 +153,7 @@ const NavBar = () => {
           name="platforms"
           id=""
         >
-          <option selected="true" disabled="disabled">
+          <option selected={true} disabled="disabled">
             FILTER BY PLATFORMS
           </option>
           {!platforms?.length ? (

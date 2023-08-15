@@ -26,7 +26,6 @@ const deleted = useSelector((state)=> state.deleted)
       dispatch(getGenres());
     }
     if (!platforms.length) {
-      console.log("asd")
       dispatch(getPlatforms());
     }
     return () => {};
