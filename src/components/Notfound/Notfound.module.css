@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "ValorantFont";
+  src: url("C:\Users\Tonga\Desktop\PI\PI-Videogames-main\client1\videogames\fonts\Valorant_Font.ttf");
+}
+
+.notFoundContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 90vh;
+}
+
+.h1Container {
+  height: 70%;
+  width: 40rem;
+  text-align: center;
+  border:solid black .4rem;
+  background-color: rgba(0, 0, 0, 0.76);
+  background-image: url("https://i.gifer.com/7VE.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.notFoundh1{
+  font-family: "ValorantFont";
+  color: rgba(158, 9, 9, 0.664);
+}

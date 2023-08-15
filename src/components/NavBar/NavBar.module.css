@@ -1,0 +1,126 @@
+@font-face {
+  font-family: "ValorantFont";
+  src: url("C:\Users\Tonga\Desktop\PI\PI-Videogames-main\client1\videogames\fonts\Valorant_Font.ttf");
+}
+.navBarContainer {
+  border-right: 0.3rem solid black;
+  border-bottom: 0.3rem solid black;
+  border-left: 0.3rem solid black;
+  background-color: rgba(3, 0, 0, 0.772);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+}
+
+.imgNavBarContainer img {
+  margin-top: 0.5rem;
+  width: 3rem;
+}
+
+.linkNavBarContainer {
+  justify-content: space-evenly;
+  width: 20%;
+  display: flex;
+}
+.createButtonContainer {
+  text-align: center;
+  width: 100%;
+}
+.newGameButton {
+  font-size: 1.6rem;
+  font-family: "ValorantFont";
+  color: grey;
+}
+.newGameButton:hover {
+  transform: scale(1.1);
+  transition: 0.4s;
+  text-shadow: -33px 12px 5px rgba(255, 252, 252, 0.59);
+}
+.newGameButton:active {
+  color: rgba(147, 2, 123, 0.515);
+  text-shadow: -33px 12px 5px rgba(147, 2, 123, 0.515);
+}
+.homeButtonContainer {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+}
+.homeButton {
+  width: 3rem;
+}
+.homeButton:hover {
+  transition: 1s;
+  transform: rotate(360deg);
+}
+.filtersContainer {
+  width: 50%;
+  display: flex;
+  height: 2rem;
+  justify-content: space-evenly;
+
+}
+.cleanFilters{
+  color: grey;
+  font-size: .8rem;
+  text-align: center;
+  width: 10rem;
+  font-weight: bold;
+  border: solid black .2rem;
+  appearance: none;
+  border-radius: 1rem;
+  background-color: rgba(62, 62, 62, 0.568);
+}
+.cleanFilters:hover{
+  transition: .4s;
+  color: white;
+  background-color: rgba(255, 0, 0, 0.224);
+}
+.cleanFilters:active{
+
+  background-color: rgba(255, 0, 0, 0.481);
+  transform: scale(0.8);
+  transition: .4s;
+  cursor: grab;
+}
+.navSelects{
+  color: grey;
+  font-size: .8rem;
+  text-align: center;
+  width: 10rem;
+  font-weight: bold;
+  border: solid black .2rem;
+  appearance: none;
+  border-radius: 1rem;
+  background-color: rgba(2, 2, 2, 0.568);
+}
+.navSelects:hover{
+  font-size: .8rem;
+  color: white;
+  transition: .4s;
+  transform: scale(1.1);
+ 
+}
+
+.navSelects:-ms-expand {
+  display: none;
+}
+.navSelects option{
+  color: rgb(0, 0, 0);
+}
+.searchButton{
+  
+  border-radius: 1rem;
+  background-color: rgb(7, 6, 6);
+  border: solid black .2rem;
+}
+
+.searchButton:hover{
+  transition: .2;
+  transform: scale(1.1);
+  cursor:alias
+}
+
+

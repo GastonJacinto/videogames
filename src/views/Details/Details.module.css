@@ -1,0 +1,121 @@
+@font-face {
+  font-family: "ValorantFont";
+  src: url("C:\Users\Tonga\Desktop\PI\PI-Videogames-main\client1\videogames\fonts\Valorant_Font.ttf");
+}
+.detailContainer{
+  display: flex;
+  height: 90vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+.detailsContainer {
+  display: flex;
+  align-items: center;
+}
+
+.detailC{
+height: 100%;
+  display: flex;
+align-content: center; 
+ flex-direction: column;
+  justify-content: space-around;
+}
+.allDetailContainer {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.856);
+   border: solid black 0.3rem;
+  text-align: center;
+  color: grey;
+
+  width: 95vw;
+  height: 100%;
+  border-radius: 2rem;
+}
+.allDetailContainer:hover {
+  transform: scale(1.01);
+  transition: 0.4s;
+  box-shadow: -1px 1px 55px 34px rgba(0, 0, 0, 0.75);
+}
+
+.detailsImagen {
+  width: 40vw;
+  height: 50vh;
+  border-radius: 2rem;
+  border: black solid 0.3rem;
+}
+.detailsImagen:hover {
+  transform: scale(1.05);
+  transition: 0.4s;
+}
+
+.infoContainer {
+  width: 100%;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.detailName {
+  font-family: "ValorantFont";
+  font-size: 3rem;
+  color: grey;
+}
+
+.detailName:hover {
+  transform: scale(1.05);
+  transition: 0.4s;
+}
+.detailsP {
+  color: rgb(192, 191, 191);
+}
+.backButtonContainer{
+  display: flex;
+  justify-content: center;
+  width:10rem;
+  height: 2rem;
+}
+.backButton {
+
+  width: 10rem;
+  font-size: 2rem;
+  color: rgb(151, 147, 147);
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.705);
+  border-radius: 1rem;
+   margin-left: 1rem;
+}
+.backButton:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+  cursor: grab;
+  box-shadow: -3px -4px 18px 0px rgba(211, 208, 208, 0.75);
+}
+
+.backButton:active {
+  background-color: rgba(108, 6, 6, 0.998);
+  transition: 0.1s;
+}
+.deleteButton {
+  text-align: center;
+  width: 3rem;
+  font-size: 3rem;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.466);
+  color: white;
+  border-radius: 1rem;
+  border: white solid 0.1rem;
+}
+.deleteButton:hover{
+  
+}
+.deleteContainer {
+  display: flex;
+  width: 100%;
+  justify-content: right;
+}

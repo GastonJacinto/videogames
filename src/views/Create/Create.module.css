@@ -1,0 +1,191 @@
+@font-face {
+  font-family: "ValorantFont";
+  src: url("C:\Users\Tonga\Desktop\PI\PI-Videogames-main\client1\videogames\fonts\Valorant_Font.ttf");
+}
+.createContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+.letsCreateContainer {
+height: 12rem;
+align-items: center;
+  width: 50%;
+  color: rgb(0, 0, 0);
+  font-size: 3rem;
+  font-family: "ValorantFont";
+  display: flex;
+  justify-content: center;
+}
+.letsCreateContainer:hover {
+  text-shadow: 15px 28px 7px rgba(0, 0, 0, 0.6);
+  transition: 0.5s;
+}
+.createFormContainer form {
+  display: flex;
+  flex-direction: column;
+  border: black 0.2rem solid;
+  background-color: rgba(0, 0, 0, 0.781);
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  width: 40rem;
+  padding: 1rem;
+}
+
+.createFormContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submitFormButton {
+  font-family: "ValorantFont";
+
+  border-radius: 20px;
+  font-size: 1.5rem;
+  margin: 1rem;
+  width: 15rem;
+  height: 3rem;
+}
+.submitFormButton:hover {
+  color: black;
+  transform: scale(1.05);
+  background-color: rgba(248, 248, 248, 0.397);
+  transition: 0.5s;
+}
+
+.createFormLabels {
+  color: grey;
+  font-family: "ValorantFont";
+}
+.formErrorLabel {
+  color: red;
+}
+
+.textAreaContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-content: center;
+}
+.allContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.nameAndImageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.releasedCalendar {
+  font-size: 1rem;
+  font-weight: bold;
+  width: 10rem;
+  height: 1.5rem;
+}
+
+.ratingRange {
+  height: 1.3rem;
+  width: 10rem;
+}
+.ratingLabel {
+  color: grey;
+}
+
+.ratingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.startButtons {
+  color: rgb(39, 39, 39);
+  font-size: 2rem;
+}
+.startButtons:hover {
+  color: orange;
+}
+
+.startButtons:hover ~ .startButtons {
+  color: orange;
+}
+
+input[type="radio"] {
+  display: none;
+}
+input[type="radio"]:checked ~ label {
+  color: orange;
+}
+
+.starsContainer {
+  direction: rtl;
+}
+
+p {
+  color: white;
+}
+
+.genreAndButContainer {
+  margin: 1rem;
+  width: 80%;
+  background-color: rgba(0, 0, 0, 0.321);
+  border: solid black 0.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+}
+.platfsbutcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+}
+.genresRender {
+  font-family: "ValorantFont";
+  color: grey;
+}
+.xGenreButton {
+  width: 2rem;
+  height: 2rem;
+  color: rgba(250, 250, 250, 0.555);
+  border-radius: 100%;
+  background-color: rgba(97, 94, 94, 0.164);
+}
+.xGenreButton:hover {
+  background-color: black;
+  transform: scale(1.2);
+}
+.buttonxContainer {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.genRenders {
+  display: flex;
+  height: 1.5rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.genreXButton {
+  margin: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  background-color: grey;
+  border-radius: 2rem;
+  font-size: 0.7rem;
+  width: 1rem;
+  height: 1rem;
+  align-items: center;
+  border: white solid 0.1rem;
+}

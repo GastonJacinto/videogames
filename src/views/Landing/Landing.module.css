@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "GOWFont";
+  src: url("C:\Users\Tonga\Desktop\PI\PI-Videogames-main\client1\videogames\fonts\Godofwar-wPz6.ttf");
+}
+
+.landingContainer {
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://www.fightersgeneration.com/nx4/game/kofxi/kofxi-stage8.gif");
+}
+
+.playContainer {
+  display: flex;
+
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+margin:2rem;
+ 
+width: 20%;  
+height: 20%;
+}
+.h1Play {
+  width: 15rem;
+  border-radius: 3rem;
+
+}
+
+.h1Play:hover{
+  transform: scale(1.2) ;
+  transition:3s;
+  
+}
+.h1Play:active{
+
+transform: scale(1.4);
+transition: 1s;
+}

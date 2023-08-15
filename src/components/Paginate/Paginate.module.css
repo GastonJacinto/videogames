@@ -1,0 +1,43 @@
+.paginateContainer{
+  display: flex;
+  justify-content: center;
+}
+.paginateButtons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+  margin: 0.5rem;
+  height: 1.5rem;
+  width: 30%;
+}
+.pagButts {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.577);
+  border-radius: 1rem;
+  width: 5rem;
+}
+.pagButts:active {
+  background-color: rgba(81, 6, 108, 0.998);
+  transition: 0.1s;
+}
+.pagButts:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+  cursor: grab;
+  box-shadow: -3px -4px 18px 0px rgba(211, 208, 208, 0.75);
+}
+.currentPageContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(0, 0, 0);
+  width: 2rem;
+  height: 2rem;
+  border: 0.1rem solid black;
+  border-radius: 1rem;
+}
+.currentPageP {
+  font-family: "ValorantFont";
+}
