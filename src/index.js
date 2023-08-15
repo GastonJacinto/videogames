@@ -9,8 +9,8 @@ import {BrowserRouter} from "react-router-dom";
 import axios from "axios"
 
 //!! CUANDO TRABAJO LOCALMENTE, DESCOMENTO LA DE ARRIBA Y VICEVERSA.
-axios.defaults.baseURL= "http://localhost:3001"
-// axios.defaults.baseURL= "https://api-production-51ff.up.railway.app"
+// axios.defaults.baseURL= "http://localhost:3001"
+axios.defaults.baseURL= "https://api-production-51ff.up.railway.app"
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 
