@@ -17,7 +17,6 @@ function Home() {
   const genres = useSelector((state) => state.genres);
   const platforms = useSelector((state) => state.platforms);
   const isLoading = useSelector((state) => state.isLoading);
-
   React.useEffect(() => {
     if (!allGames.length) {
       dispatch(getAllGames());

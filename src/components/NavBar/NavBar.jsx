@@ -65,6 +65,7 @@ const NavBar = () => {
 
   const genres = useSelector((state) => state.genres);
   const platforms = useSelector((state)=>state.platforms)
+  
   return (
     <div className={style.navBarContainer}>
       <div className={style.imgNavBarContainer}>

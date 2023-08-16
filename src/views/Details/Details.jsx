@@ -20,13 +20,13 @@ const Details = () => {
   let description = gameDetail.description?.replace(/<[^>]+>/g, "");
 
   React.useEffect(() => {
-    dispatch(setIsLoading())
+    dispatch(setIsLoading());
     dispatch(getGameDetail(id));
     return () => {
       dispatch(cleanDetail());
     };
   }, []);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   let genres = [];
 
   if (gameDetail.onDB) {
@@ -54,7 +54,7 @@ const Details = () => {
       return (plat = `${plat},`);
     }
   });
-const isLoading = useSelector((state)=>state.isLoading)
+  const isLoading = useSelector((state) => state.isLoading);
 
   function deleteDBGame() {
     const confirm = window.confirm(
@@ -62,46 +62,61 @@ const isLoading = useSelector((state)=>state.isLoading)
     );
     if (confirm) {
       window.alert("Your game was succesfully deleted.");
-      dispatch(deleteGame(gameDetail.id))
-      navigate("/home")
-      } else window.alert("Action cancelled.")
-
+      dispatch(deleteGame(gameDetail.id));
+      navigate("/home");
+    } else window.alert("Action cancelled.");
   }
   return (
     <div className={style.detailContainer}>
-      {!isLoading?<div className={style.detailC}><div className={style.backButtonContainer}>
-        <Link to="/home">
-          <button className={style.backButton}>⬅Back</button>
-        </Link>
-      </div>
-      <div className={style.detailsContainer}>
-        <div className={style.allDetailContainer}>
-          <div className={style.imgContainer}>
-            <img
-              className={style.detailsImagen}
-              src={gameDetail.imagen}
-              alt={gameDetail.name}
-            />
+      {!isLoading ? (
+        <div className={style.detailC}>
+          <div className={style.backButtonContainer}>
+            <Link to="/home">
+              <button className={style.backButton}>⬅Back</button>
+            </Link>
           </div>
-          <div className={style.infoContainer}>
-            <h2 className={style.detailName}>
-              {gameDetail.id}: {gameDetail.name}
-            </h2>
-            <p className={style.detailsP}>{description}</p>
-            <p className={style.detailsP}>Platforms: {platforms}</p>
-            <p className={style.detailsP}>Genres: {genres}</p>
-            <p className={style.detailsP}>Released: {gameDetail.released}</p>
-            <p className={style.detailsP}>Rating: {gameDetail.rating}</p>
-            <div className={style.deleteContainer}>
-              {gameDetail.onDB ? (
-                  <button onClick={deleteDBGame} className={style.deleteButton}>
-                    🗑
-                  </button>
-              ) : null}
+            <div className={style.allDetailContainer}>
+              <div className={style.imginfoContainer}>
+                <div className={style.imgcont}>
+                <img
+                  className={style.detailsImagen}
+                  src={gameDetail.imagen}
+                  alt={gameDetail.name}
+                />
+                </div>
+                <div className={style.pContainer}>
+                <p className={style.detailsP}>Platforms: {platforms}</p>
+                <p className={style.detailsP}>Genres: {genres}</p>
+                <p className={style.detailsP}>
+                  Released: {gameDetail.released}
+                </p>
+                <p className={style.detailsP}>Rating: {gameDetail.rating}</p>
+                </div>
+              </div>
+              <div className={style.infoContainer}>
+                <div>
+                <h2 className={style.detailName}>
+                  {gameDetail.id}: {gameDetail.name}
+                </h2>
+                <p className={style.detailsDescription}>{description}</p>
+               
+                </div>
+                <div className={style.deleteContainer}>
+                  {gameDetail.onDB ? (
+                    <button
+                      onClick={deleteDBGame}
+                      className={style.deleteButton}
+                    >
+                      🗑
+                    </button>
+                  ) : null}
+                </div>
+              </div>
             </div>
-          </div>
         </div>
-      </div></div>:<Loader/>}
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 };

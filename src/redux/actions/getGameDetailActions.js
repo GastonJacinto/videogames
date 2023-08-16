@@ -10,7 +10,7 @@ export function getGameDetail({ id }) {
         payload: data,
       });
     } catch (error) {
-      
+      alert(error.response.data.error)
       
     }
   };

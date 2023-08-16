@@ -13,7 +13,7 @@ import axios from "axios"
 axios.defaults.baseURL= "https://api-production-51ff.up.railway.app"
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-
+  
   <React.StrictMode>
     <BrowserRouter>
     <Provider store={store}>

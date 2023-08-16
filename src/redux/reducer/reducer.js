@@ -25,7 +25,6 @@ let initialState = {
   filteredByName: [],
   backUp: [],
   isLoading:false,
-  deleted:false,
   notFound:false,
   platforms: [],
   genres: [],
@@ -35,16 +34,16 @@ function rootReducer(state = initialState, action) {
   const cardPerPage = 15;
   switch (action.type) {
     case GET_ALL_GAMES:
-      return {
-        ...state,
-        isLoading:false,
-        backUp: action.payload,
-        filteredGames: action.payload,
-        allGames: [...action.payload].splice(0, cardPerPage),
-        currentPage: 0,
-        deleted:false,
-      };
-    case GET_GENRES:
+      
+        return {
+          ...state,
+          isLoading:false,
+          backUp: action.payload,
+          filteredGames: action.payload,
+          allGames: [...action.payload].splice(0, cardPerPage),
+          currentPage: 0,
+        };    
+        case GET_GENRES:
       return {
         ...state,
         genres: action.payload,

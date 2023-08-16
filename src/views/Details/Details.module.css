@@ -2,48 +2,58 @@
   font-family: "ValorantFont";
   src: url("../../../fonts/Valorant_Font.ttf");
 }
-.detailContainer{
+.detailContainer {
   display: flex;
-  height: 90vh;
+  height: 94vh;
   width: 100vw;
-  justify-content: center;
+  justify-content:space-around;
+  flex-direction: column;
   align-items: center;
   overflow: auto;
 }
-.detailsContainer {
-  display: flex;
-  align-items: center;
-  
-}
-
 .detailC{
-height: 100%;
   display: flex;
-align-content: center; 
- flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 100%;
 }
 .allDetailContainer {
   display: flex;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.856);
-   border: solid black 0.3rem;
+  border: solid black 0.3rem;
   text-align: center;
   color: grey;
-
   width: 95vw;
-  height: 100%;
+  height: 65vh;
   border-radius: 2rem;
 }
+
 .allDetailContainer:hover {
   transform: scale(1.01);
   transition: 0.4s;
   box-shadow: -1px 1px 55px 34px rgba(0, 0, 0, 0.75);
 }
+.imginfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+    margin: 0.5rem;
+  width: 40rem;
+height: 100%;
+}
 
+.pContainer {
+  text-align: left;
+  overflow: auto;
+  height: auto;
+}
+.imgcont{
+  height: 20rem;
+}
 .detailsImagen {
-  width: 40vw;
-  height: 50vh;
+  width: 30rem;
+  height: fit-content;
   border-radius: 2rem;
   border: black solid 0.3rem;
 }
@@ -52,13 +62,13 @@ align-content: center;
   transition: 0.4s;
 }
 
-.infoContainer {
-  width: 100%;
-  margin: 1rem;
+.infoContainer{
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  text-align: left;
+  justify-content: space-between;
+  overflow: auto;
+  margin: 1rem;
+  height: 100%;
 
 }
 
@@ -69,20 +79,24 @@ align-content: center;
 }
 
 .detailName:hover {
-color: white;
+  color: white;
   transition: 0.4s;
 }
 .detailsP {
+  overflow: auto;
   color: rgb(192, 191, 191);
 }
-.backButtonContainer{
+.detailsDescription{
+  color: grey;
+  font-size:larger;
+}
+.backButtonContainer {
   display: flex;
   justify-content: center;
-  width:10rem;
+  width: 10rem;
   height: 2rem;
 }
 .backButton {
-
   width: 10rem;
   font-size: 2rem;
   color: rgb(151, 147, 147);
@@ -91,7 +105,7 @@ color: white;
   display: flex;
   background-color: rgba(0, 0, 0, 0.705);
   border-radius: 1rem;
-   margin-left: 1rem;
+  margin-left: 1rem;
 }
 .backButton:hover {
   transform: scale(1.1);
@@ -114,14 +128,16 @@ color: white;
   border-radius: 1rem;
   border: white solid 0.1rem;
 }
-.deleteButton:hover{
+.deleteButton:hover {
   transform: scale(1.1);
   color: rgb(255, 0, 0);
-  transition: .2s;
+  border:.1rem red solid;
+  transition: 0.2s;
   cursor: grab;
 }
 .deleteContainer {
   display: flex;
-  width: 100%;
+  width: 89%;
+  margin-bottom: 1rem;
   justify-content: right;
 }

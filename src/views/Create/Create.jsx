@@ -4,9 +4,6 @@ import React, { useEffect } from "react";
 import style from "./Create.module.css";
 import { postGame } from "../../redux/actions/postGameActions";
 import { useDispatch, useSelector } from "react-redux";
-
-import { getGenres } from "../../redux/actions/getGenresActions";
-
 import { getAllGames } from "../../redux/actions/getAllGamesActions";
 import { setIsLoading } from "../../redux/actions/isLoadingAction";
 
@@ -123,8 +120,10 @@ if(gameCreated){
 
     aux ? setAux(false) : setAux(true);
   }
+
   function handleSubmit(event) {
     gameCreated=true;
+
     const form = document.getElementById("form");
     event.preventDefault();
     form.reset();
@@ -139,15 +138,8 @@ if(gameCreated){
       rating: "Please select a rating for your game.",
       genres: "Please, select one genre at least.",
     });
-    setCreate({
-      name: "",
-      imagen: "",
-      description: "",
-      platforms: "",
-      released: "",
-      rating: "",
-      genres: "",
-    })
+    
+
     const newGame = {
       name: create.name,
       imagen: create.imagen,
@@ -157,6 +149,7 @@ if(gameCreated){
       rating: create.rating,
       genres: addGenres,
     };
+
     dispatch(postGame(newGame));
   }
   function validation(state, name) {
@@ -227,6 +220,7 @@ if(gameCreated){
   // if (localStorage.plats) {
   //   allPlatforms = localStorage.getItem("plats").split(",");
   // }
+  
   const platforms = useSelector((state)=>state.platforms)
 
   return (
