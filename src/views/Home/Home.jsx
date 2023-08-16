@@ -12,15 +12,16 @@ import Loader from "../../components/Loader/Loader";
 import { getPlatforms } from "../../redux/actions/getPlatformsActions";
 function Home() {
   const dispatch = useDispatch();
+
   const allGames = useSelector((state) => state.allGames);
- const genres = useSelector((state) => state.genres);
- const platforms = useSelector((state) => state.platforms);
-const isLoading = useSelector((state)=> state.isLoading)
-const deleted = useSelector((state)=> state.deleted)
+  const genres = useSelector((state) => state.genres);
+  const platforms = useSelector((state) => state.platforms);
+  const isLoading = useSelector((state) => state.isLoading);
+
   React.useEffect(() => {
-    if (!allGames.length ) {
+    if (!allGames.length) {
       dispatch(getAllGames());
-      dispatch(setIsLoading())
+      dispatch(setIsLoading());
     }
     if (!genres.length) {
       dispatch(getGenres());
@@ -30,20 +31,21 @@ const deleted = useSelector((state)=> state.deleted)
     }
     return () => {};
   }, []);
- return (
-    <div className={style.homeContainer}>
-    
-      {!isLoading?<div>
-       
-      <Paginate/>
-      <div >
- 
-        <div className={style.cardsHomeContainer}>
-        <Cards props={allGames} />
-        </div>
-      </div>
 
-    </div>:<Loader/>}
+  return (
+    <div className={style.homeContainer}>
+      {!isLoading ? (
+        <div>
+          <Paginate />
+          <div>
+            <div className={style.cardsHomeContainer}>
+              <Cards props={allGames} />
+            </div>
+          </div>
+        </div>
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 }

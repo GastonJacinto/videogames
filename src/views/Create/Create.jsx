@@ -139,6 +139,15 @@ if(gameCreated){
       rating: "Please select a rating for your game.",
       genres: "Please, select one genre at least.",
     });
+    setCreate({
+      name: "",
+      imagen: "",
+      description: "",
+      platforms: "",
+      released: "",
+      rating: "",
+      genres: "",
+    })
     const newGame = {
       name: create.name,
       imagen: create.imagen,
@@ -271,6 +280,7 @@ if(gameCreated){
           {!platforms?.length ? (
             <option selected={true} disabled="disabled">Charging platforms, please wait.</option>
           ) : null}
+          <option selected={true} disabled="disabled">Select platforms</option>
             {platforms?.map((plat,i) => {
               return <option key={i}value={plat}>{plat}</option>;
             })}
@@ -383,6 +393,7 @@ if(gameCreated){
             id="genres"
              onChange={handleChange}
           >
+              <option selected={true} disabled="disabled">Select genres</option>
             {genres.map((genre) => {
               return <option key={genre.id}value={genre.name}>{genre.name}</option>;
             })}

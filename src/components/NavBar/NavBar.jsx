@@ -10,7 +10,7 @@ import { filteredBySource } from "../../redux/actions/filteredBySourceActions";
 import { filteredByGenre } from "../../redux/actions/filteredByGenresActions";
 import { filteredByPlatform } from "../../redux/actions/filteredByPlatformsActions";
 import { setIsLoading } from "../../redux/actions/isLoadingAction";
-import lofi from "../../audio/lofi.mp3";
+import lofi from "../../audio/polozhenie.mp3";
 
 const NavBar = () => {
   const dispatch = useDispatch();
